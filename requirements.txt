@@ -1,0 +1,5 @@
+functions-framework==3.*
+fastapi
+pydantic
+httpx
+google-cloud-firestore
