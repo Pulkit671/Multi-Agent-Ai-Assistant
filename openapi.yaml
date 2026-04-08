@@ -1,0 +1,43 @@
+openapi: 3.0.0
+info:
+  title: Multi-Agent Assistant API
+  version: 1.0.0
+servers:
+  - url: https://productivity-assistant-api-34968598333.us-central1.run.app
+paths:
+  /tasks:
+    post:
+      summary: Add a study task
+      operationId: manage_tasks
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [add]
+                details:
+                  type: string
+      responses:
+        '200':
+          description: Task saved to Firestore
+  /calendar:
+    post:
+      summary: Add a calendar event
+      operationId: manage_calendar
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                action:
+                  type: string
+                  enum: [create]
+                details:
+                  type: string
+      responses:
+        '200':
+          description: Event added with timestamp
